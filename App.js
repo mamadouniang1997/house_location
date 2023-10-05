@@ -42,8 +42,12 @@ export default function App() {
     { title: "Logout", image: logout },
   ];
 
+
+
   return (
     <SafeAreaView style={styles.container}>
+
+     
       <View style={{ flexGrow: 1, marginTop: 10 }}>
         {tabs.map((tab, index) => (
           <TabButton
@@ -55,6 +59,7 @@ export default function App() {
           />
         ))}
       </View>
+      
       <Animated.View
         style={{
           flexGrow: 1,
@@ -102,20 +107,13 @@ export default function App() {
           <Image
             source={showMenu ? close : menu}
             style={{
-              width: 20,
-              height: 20,
+              width: 16,
+              height: 16,
               tintColor: 'black',
-              marginTop: 40,
+              marginTop: 30,
             }}
           />
-          <Text
-            style={{
-              fontSize: 30,
-              fontWeight: 'bold'
-            }}
-          >
-            {currentTab}
-          </Text>
+        
         </TouchableOpacity>
       </Animated.View>
     </SafeAreaView>
@@ -126,7 +124,7 @@ const TabButton = ({ currentTab, setCurrentTab, title, image }) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        if (title === "Logout") {
+        if (title == "Logout") {
           // Gérer le logout ici
         } else {
           setCurrentTab(title);
@@ -134,7 +132,7 @@ const TabButton = ({ currentTab, setCurrentTab, title, image }) => {
       }}
       style={{
         height: 60,
-        paddingTop: 70
+        paddingTop: 60
       }}
     >
       <View
